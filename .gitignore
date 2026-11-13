@@ -1,0 +1,33 @@
+# Dependencies
+dist/
+node_modules/
+.vscode/
+*.local
+*.log
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Build artifacts
+public/assets/
+dist/
+*.bundle.js
+*.chunk.js
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System
+.DS_Store
+Thumbs.db
+
+# Node
+npm-debug.log*
+.yarn-integrity
