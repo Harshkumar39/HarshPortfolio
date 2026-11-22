@@ -11,6 +11,7 @@ export interface Project {
   description: string;
   longDescription?: string;
   image: string;
+  gallery?: string[];
   tech: string[];
   category: 'Full Stack' | 'Frontend' | 'Backend' | 'Other';
   githubUrl?: string;
@@ -40,7 +41,7 @@ export interface Certification {
   id: string;
   name: string;
   organization: string;
-  issueDate: string;
+  issueDate?: string;
   certificateUrl?: string;
   image?: string;
 }
@@ -52,7 +53,7 @@ export interface Achievement {
 }
 
 export interface SocialLink {
-  name: 'GitHub' | 'LinkedIn' | 'Email' | 'LeetCode' | 'GeeksforGeeks';
+  name: 'GitHub' | 'LinkedIn' | 'Email' | 'LeetCode' | 'GeeksforGeeks' | 'Instagram';
   url: string;
   icon: string;
 }

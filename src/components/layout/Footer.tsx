@@ -1,9 +1,9 @@
-import { ArrowUpRight, BriefcaseBusiness, Code2, Mail } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { SocialIcon } from '../ui/SocialIcon'
 import { socialLinks } from '../../data/social'
 import { navigation } from '../../utils/constants'
 
-const icons = { GitHub: Code2, LinkedIn: BriefcaseBusiness, Email: Mail, LeetCode: ArrowUpRight, GeeksforGeeks: ArrowUpRight }
+const analyticsConfigured = Boolean(import.meta.env.VITE_PLAUSIBLE_DOMAIN?.trim())
 
 export function Footer() {
   return (
@@ -16,13 +16,15 @@ export function Footer() {
         <div className="footer-links">
           <h3>Explore</h3>
           {navigation.slice(1, 6).map((item) => <Link key={item.to} to={item.to}>{item.label}</Link>)}
+          <Link to="/leetcode">LeetCode stats</Link>
+          <Link to="/resume">Printable resume</Link>
         </div>
         <div className="footer-links">
           <h3>Connect</h3>
           {socialLinks.map((item) => {
-            const Icon = icons[item.name]
-            return <a key={item.name} href={item.url} target={item.name === 'Email' ? undefined : '_blank'} rel="noreferrer"><Icon size={16} />{item.name}</a>
+            return <a key={item.name} href={item.url} target={item.name === 'Email' ? undefined : '_blank'} rel="noreferrer"><SocialIcon name={item.name} size={16} />{item.name}</a>
           })}
+          {analyticsConfigured && <button className="privacy-settings-link" type="button" onClick={() => window.dispatchEvent(new Event('open-analytics-preferences'))}>Privacy settings</button>}
         </div>
       </div>
       <div className="container footer-bottom">

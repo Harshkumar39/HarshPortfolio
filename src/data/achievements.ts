@@ -1,8 +1,10 @@
 import type { Achievement } from '../types'
+import { projects } from './projects'
+import { skills } from './skills'
+import { certifications } from './certifications'
 
-// Placeholder values intentionally do not claim real achievements.
 export const achievements: Achievement[] = [
-  { label: 'Projects', value: 0, suffix: '+' },
-  { label: 'Technologies explored', value: 0, suffix: '+' },
-  { label: 'Certifications', value: 0 },
+  { label: 'Projects', value: projects.length },
+  { label: 'Skills & technologies', value: skills.length },
+  { label: 'Certificates & credentials', value: certifications.length },
 ]

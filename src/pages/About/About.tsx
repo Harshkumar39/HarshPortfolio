@@ -7,7 +7,7 @@ export default function About() {
     <section className="section container page-section">
       <SectionHeading eyebrow="ABOUT ME" title="A developer shaped by curiosity." description="A little about my journey, what I value, and where I hope to go." />
       <div className="about-layout">
-        <div className="about-monogram">H<span>.</span></div>
+        <div className="about-photo"><img src="/images/profile.jpg" alt="Harsh Kumar" /></div>
         <div className="about-copy">
           <span className="eyebrow">MY STORY</span>
           <h3>Learning, building, and getting better with every project.</h3>

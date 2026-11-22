@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ScrambleText, StaggerText } from './TextEffects'
 
 export function SectionHeading({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
   return (
@@ -9,9 +10,9 @@ export function SectionHeading({ eyebrow, title, description }: { eyebrow: strin
       viewport={{ once: true, amount: 0.35 }}
       transition={{ duration: 0.5 }}
     >
-      <span className="eyebrow">{eyebrow}</span>
-      <h2>{title}</h2>
-      {description && <p>{description}</p>}
+      <span className="eyebrow"><ScrambleText text={eyebrow} /></span>
+      <h2><StaggerText>{title}</StaggerText></h2>
+      {description && <p><StaggerText>{description}</StaggerText></p>}
     </motion.div>
   )
 }

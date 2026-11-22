@@ -15,3 +15,20 @@ export function validateContact(values: ContactValues): ContactErrors {
   if (values.message.trim().length < 10) errors.message = 'Please enter at least 10 characters.'
   return errors
 }
+
+export function createContactEmailDraftUrl(values: ContactValues, recipient: string) {
+  const body = [
+    `Name: ${values.name.trim()}`,
+    `Email: ${values.email.trim()}`,
+    '',
+    values.message.trim(),
+  ].join('\n')
+
+  return `https://mail.google.com/mail/?${new URLSearchParams({
+    view: 'cm',
+    fs: '1',
+    to: recipient,
+    subject: values.subject.trim(),
+    body,
+  }).toString()}`
+}
