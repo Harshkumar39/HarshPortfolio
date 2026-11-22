@@ -46,8 +46,9 @@ export function ScrambleText({
   }, [inView, reducedMotion, text])
 
   return (
-    <span ref={ref} className={`scramble-text ${className}`} aria-label={text}>
+    <span ref={ref} className={`scramble-text ${className}`}>
       <span aria-hidden="true">{displayText}</span>
+      <span className="sr-only">{text}</span>
     </span>
   )
 }

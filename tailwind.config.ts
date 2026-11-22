@@ -13,7 +13,8 @@ export default {
         primary: 'var(--color-primary)',
       },
       fontFamily: {
-        sans: ['Sora', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Clash Display', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
     },
